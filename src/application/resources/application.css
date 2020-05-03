@@ -1,0 +1,5 @@
+.root{
+	-fx-background-image: url('displayBackground.jpg') ;
+	-fx-background-repeat: no-repeat ;
+	-fx-alignment: center ;
+}

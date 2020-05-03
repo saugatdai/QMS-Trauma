@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#handleKeyTypedEvent" prefHeight="438.0" prefWidth="442.0" style="-fx-background-color: #e6f7ff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ServerController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="501.0" minWidth="10.0" prefWidth="306.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.0" minWidth="10.0" prefWidth="136.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="94.0" minHeight="0.0" prefHeight="29.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="200.0" minHeight="0.0" prefHeight="44.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="298.0" minHeight="10.0" prefHeight="293.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <MenuBar fx:id="menuBar" prefHeight="31.0" prefWidth="600.0" style="-fx-background-color: #00b8e6;" GridPane.columnSpan="2" GridPane.valignment="TOP">
+        <menus>
+          <Menu mnemonicParsing="false" text="Options">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onClientConfigurationClicked" text="Configuration" />
+                  <MenuItem mnemonicParsing="false" onAction="#onEditInformationClicked" text="Edit Information" />
+                  <MenuItem mnemonicParsing="false" onAction="#onChangeLoginInfoClicked" text="Change Login Info" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onViewUsersClicked" text="View Users" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onViewActivitiesClicked" text="View Activities" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Token">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onResetTokenValueClicked" text="Reset Token Value" />
+                  <MenuItem mnemonicParsing="false" onAction="#onLoadLastDataClicked" text="Load Last Data" />
+                  <MenuItem mnemonicParsing="false" onAction="#onPresetClicked" text="Preset" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onShortcutsClicked" text="Shortcuts" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <VBox prefHeight="257.0" prefWidth="305.0" GridPane.rowIndex="2">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="305.0" style="-fx-background-color: #e6f7ff;">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="62.0" text="Counter : " />
+                  <Label fx:id="counter" prefHeight="17.0" prefWidth="115.0">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font></Label>
+                  <JFXButton fx:id="minimizeButton" onAction="#onMinimizePressed" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #00b8e6;" text="Minimize" textFill="WHITE" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <Label fx:id="tokenNumber" alignment="CENTER" contentDisplay="TEXT_ONLY" prefHeight="107.0" prefWidth="455.0" style="-fx-background-color: #000000;" text="0000" textFill="RED">
+               <font>
+                  <Font name="Yu Gothic UI Regular" size="51.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="306.0" style="-fx-background-color: #e6f7ff;">
+               <children>
+                  <JFXButton fx:id="againButton" onAction="#onCallAgainClicked" style="-fx-background-color: #00b8e6;" text="Call Again" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="completeButton" onAction="#onCompletedClicked" style="-fx-background-color: #00b8e6;" text="Completed" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="nextButton" onAction="#onNextButtonClicked" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #00b8e6;" text="Bypass" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="32.0" prefWidth="305.0">
+               <children>
+                  <Label text="Forward to counter : ">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXComboBox fx:id="counters">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </JFXComboBox>
+                  <JFXButton onAction="#onForwardButtonPressed" style="-fx-background-color: #00b8e6;" text="Forward" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="306.0" style="-fx-background-color: #e6f7ff;">
+               <children>
+                  <Label fx:id="serverStatus" text="Status :" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="41.0" prefWidth="306.0" style="-fx-background-color: #e6f7ff;">
+               <children>
+                  <JFXButton fx:id="serverStartButton" onAction="#onServerStartClicked" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #00b8e6;" text="Start Server" textFill="WHITE" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+      <Label prefHeight="63.0" prefWidth="457.0" style="-fx-background-color: #e6f7ff;" text="Atlas Queue Management System" textFill="#a12e2e" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="305.0" style="-fx-background-color: #e6f7ff;" GridPane.rowIndex="1">
+         <children>
+            <Label prefHeight="17.0" prefWidth="65.0" text="Operator : " />
+            <Label fx:id="operatorName" prefHeight="16.0" prefWidth="111.0">
+               <font>
+                  <Font name="Arial Bold" size="13.0" />
+               </font></Label>
+            <JFXButton onAction="#onLogoutPressed" prefHeight="25.0" prefWidth="119.0" style="-fx-background-color: #00b8e6;" text="Logout" textFill="WHITE" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #e6f7ff;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <JFXButton onAction="#onClearBypassedListClicked" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #00b8e6;" text="Clear ByPassedList" textFill="WHITE" />
+         </children>
+      </VBox>
+      <JFXListView fx:id="byPassedList" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+   </children>
+   <padding>
+      <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+   </padding>
+</GridPane>

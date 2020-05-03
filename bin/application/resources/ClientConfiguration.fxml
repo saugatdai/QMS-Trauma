@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="285.0" prefWidth="276.0" style="-fx-background-color: #e6f7ff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ClientConfigurationController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="66.0" prefWidth="276.0">
+         <children>
+            <ImageView fitHeight="70.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/application/resources/configIcon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="39.0" prefWidth="256.0">
+         <children>
+            <Label prefHeight="16.0" prefWidth="95.0" text="Server IP : " />
+            <JFXTextField fx:id="serverIP" prefHeight="25.0" prefWidth="164.0" promptText="Server IP" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="40.0" prefWidth="259.0">
+         <children>
+            <Label prefHeight="16.0" prefWidth="93.0" text="Server Port : " />
+            <JFXTextField fx:id="serverPort" prefHeight="25.0" prefWidth="172.0" promptText="Server Port" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="259.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="98.0" text="Counter : " />
+            <JFXComboBox fx:id="counters" prefHeight="25.0" prefWidth="179.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="30.0" prefWidth="274.0">
+         <children>
+            <JFXButton onAction="#onBackButtonPressed" prefHeight="25.0" prefWidth="103.0" style="-fx-background-color: #00b8e6;" text="Back" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton onAction="#onServerSettingSaveClicked" prefHeight="25.0" prefWidth="126.0" style="-fx-background-color: #00b8e6;" text="Save" textFill="WHITE">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </JFXButton>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
