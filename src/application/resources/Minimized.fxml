@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbox" alignment="CENTER" onKeyReleased="#handleKeyReleased" onMouseDragged="#handleMouseDragEvent" onMousePressed="#handleMousePressEvent" prefHeight="164.0" prefWidth="235.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MinimizedServerController">
+   <children>
+      <Label fx:id="tokenNumber" alignment="CENTER" onKeyReleased="#handleKeyReleased" prefHeight="132.0" prefWidth="235.0" textFill="RED">
+         <font>
+            <Font name="Yu Gothic Bold" size="56.0" />
+         </font></Label>
+      <JFXButton onAction="#onConfigureClicked" prefHeight="25.0" prefWidth="252.0" style="-fx-background-color: #00b8e6;" text="Configure" textFill="WHITE" />
+   </children>
+</VBox>

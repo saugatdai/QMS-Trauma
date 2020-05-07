@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #e6f7ff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+   <tabs>
+      <Tab closable="false" text="Operator">
+         <content>
+            <GridPane alignment="CENTER" hgap="10.0" maxHeight="319.0" maxWidth="396.0" minHeight="319.0" minWidth="396.0" prefHeight="319.0" prefWidth="396.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="113.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="267.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="184.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="184.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="61.0" minHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+               <children>
+                  <Label text="Authorize As" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label text="User Name" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <Label text="Password" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <Label fx:id="loginStatus" text="Status : " GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                  <Label text="Operator Login" textFill="#a12e2e" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <ImageView fitHeight="56.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                     <image>
+                        <Image url="/application/resources/login.png" />
+                     </image>
+                  </ImageView>
+                  <JFXComboBox fx:id="authorization" prefHeight="25.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <JFXTextField fx:id="usernameText" promptText="Enter Username" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <JFXPasswordField fx:id="passwordText" promptText="Enter Password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <JFXButton defaultButton="true" onAction="#loginPressed" prefHeight="25.0" prefWidth="243.0" style="-fx-background-color: #00b8e6;" text="Login" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab closable="false" text="Admin">
+         <content>
+            <GridPane alignment="CENTER" hgap="10.0" maxHeight="319.0" maxWidth="396.0" minHeight="319.0" minWidth="396.0" prefHeight="319.0" prefWidth="396.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="113.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="267.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="184.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="61.0" minHeight="5.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+               <children>
+                  <Label text="Password" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label fx:id="adminStatus" text="Status : " GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <Label text="Admin Login" textFill="#a12e2e" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <ImageView fitHeight="56.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                     <image>
+                        <Image url="/application/resources/admin.png" />
+                     </image>
+                  </ImageView>
+                  <JFXPasswordField fx:id="adminPassword" promptText="Enter Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <JFXButton onAction="#onAdminloginPressed" prefHeight="25.0" prefWidth="240.0" ripplerFill="#3f1790" style="-fx-background-color: #00b8e6;" text="Login" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+   </tabs>
+</JFXTabPane>

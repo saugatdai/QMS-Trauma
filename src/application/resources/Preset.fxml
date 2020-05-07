@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="107.0" prefWidth="482.0" style="-fx-background-color: #e6f7ff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PresetController">
+   <children>
+      <Label text="Preset Token Number" textFill="#a12e2e">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="23.0" prefWidth="600.0">
+         <children>
+            <Label text="Please enter preset value (Should be a proper Number)" />
+            <JFXTextField fx:id="presetValue" prefHeight="25.0" prefWidth="117.0">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </JFXTextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="26.0" prefWidth="600.0">
+         <children>
+            <JFXButton onAction="#onPresetButtonClicked" style="-fx-background-color: #00b8e6;" text="Preset">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton onAction="#OnCancelButtonClicked" style="-fx-background-color: #00b8e6;" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
